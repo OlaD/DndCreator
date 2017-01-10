@@ -1,0 +1,64 @@
+﻿<Window x:Class="DndCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DndCreator"
+        mc:Ignorable="d"
+        Title="DnD Creator" Height="378" Width="569">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0*"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<TabControl x:Name="tabControl" Grid.ColumnSpan="2" Grid.RowSpan="1">
+			<TabItem Header="Rasa">
+				<Grid ShowGridLines="True">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="141*" MaxWidth="200"/>
+						<ColumnDefinition Width="293*"/>
+						<ColumnDefinition Width="119*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="59"/>
+						<RowDefinition Height="260*"/>
+					</Grid.RowDefinitions>
+
+					<StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Margin="10,10,10,0" VerticalAlignment="Top" >
+						<StackPanel.Resources>
+							<Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+								<Setter Property="Margin" Value="0, 2, 0, 2" />
+							</Style>
+						</StackPanel.Resources>
+
+						<RadioButton x:Name="general" Content="Opis ogólny" IsChecked="True" />
+						<RadioButton x:Name="personality" Content="Osobowość"/>
+						<RadioButton x:Name="physicalDescription" Content="Opis fizyczny"/>
+						<RadioButton x:Name="relations" Content="Relacje"/>
+						<RadioButton x:Name="alignment" Content="Charakter"/>
+						<RadioButton x:Name="lands" Content="Krainy"/>
+						<RadioButton x:Name="religion" Content="Religia"/>
+						<RadioButton x:Name="language" Content="Język"/>
+						<RadioButton x:Name="names" Content="Imiona"/>
+						<RadioButton x:Name="adventures" Content="Poszukiwacze przygód"/>
+
+					</StackPanel>
+
+					<TextBox x:Name="raceDescription" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" Text="test" IsReadOnly="True" BorderThickness="0" />
+
+					<Image x:Name="raceImage" Grid.Column="2" HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="99"/>
+
+					<ListBox x:Name="racesList" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,20,0,19" VerticalAlignment="Center" Width="175"/>
+					<Button x:Name="confirmRace" Content="Zatwierdź" Grid.Column="1" HorizontalAlignment="Left" Margin="190,20,0,19" VerticalAlignment="Center" Width="94"/>
+
+				</Grid>
+			</TabItem>
+
+			<TabItem Header="TabItem">
+				<Grid Background="#FFE5E5E5"/>
+			</TabItem>
+		</TabControl>
+	</Grid>
+
+</Window>
