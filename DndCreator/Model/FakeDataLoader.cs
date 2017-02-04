@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DndCreator.Model
 {
-				class DataLoader
+				class FakeDataLoader : IDataLoader
 				{
 								public void LoadData()
 								{

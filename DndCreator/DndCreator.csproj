@@ -62,7 +62,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Character.cs" />
-    <Compile Include="Model\DataLoader.cs" />
+    <Compile Include="Model\FakeDataLoader.cs" />
+    <Compile Include="Model\IDataLoader.cs" />
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\RaceDescriptionType.cs" />
     <Compile Include="ViewModel\RaceViewModel.cs" />
