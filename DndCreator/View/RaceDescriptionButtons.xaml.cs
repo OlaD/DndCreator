@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DndCreator
+namespace DndCreator.View
 {
 				/// <summary>
-				/// Interaction logic for MainWindow.xaml
+				/// Interaction logic for RaceDescriptionButtons.xaml
 				/// </summary>
-				public partial class MainWindow : Window
+				public partial class RaceDescriptionButtons : UserControl
 				{
-								public MainWindow()
+								public RaceDescriptionButtons()
 								{
 												InitializeComponent();
 								}

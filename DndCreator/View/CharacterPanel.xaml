@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="DndCreator.View.CharacterPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DndCreator.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Height="Auto" Width="Auto" BorderThickness="1">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="67*" />
+			<ColumnDefinition Width="233*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Label x:Name="characterPanelHeader" Content="Karta Postaci" FontFamily="BlackChancery" FontSize="16" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center">
+			<Label.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="White" Offset="0"/>
+					<GradientStop Color="#FFEEEEEE" Offset="1"/>
+				</LinearGradientBrush>
+			</Label.Background>
+		</Label>
+		<Label x:Name="characterRaceLabel" Content="Rasa:" Grid.Row="1"/>
+		<Button x:Name="characterRace" Content="[wybierz]" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" Background="#00000000" Foreground="Black" BorderBrush="#00707070" Click="characterRace_Click"/>
+	</Grid>
+</UserControl>
