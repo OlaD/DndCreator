@@ -15,17 +15,46 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 			<RowDefinition />
 		</Grid.RowDefinitions>
-		<Label x:Name="characterPanelHeader" Content="Karta Postaci" FontFamily="BlackChancery" FontSize="16" Grid.Column="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Center">
-			<Label.Background>
-				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-					<GradientStop Color="White" Offset="0"/>
-					<GradientStop Color="#FFEEEEEE" Offset="1"/>
-				</LinearGradientBrush>
-			</Label.Background>
+		<Label x:Name="characterPanelHeader" 
+								 FontFamily="BlackChancery"
+									FontSize="16"
+								 Grid.Column="0"
+								 Grid.ColumnSpan="2"
+								 HorizontalContentAlignment="Center"
+								 Content="Karta Postaci"  >
+								<Label.Background>
+												<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+																<GradientStop Color="White" Offset="0"/>
+																<GradientStop Color="#FFEEEEEE" Offset="1"/>
+												</LinearGradientBrush>
+								</Label.Background>
 		</Label>
-		<Label x:Name="characterRaceLabel" Content="Rasa:" Grid.Row="1"/>
-		<Button x:Name="characterRace" Content="[wybierz]" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" Background="#00000000" Foreground="Black" BorderBrush="#00707070" Click="characterRace_Click"/>
+		<Label x:Name="RaceLabel" 
+								 Content="Rasa:" 
+								 Grid.Row="1"/>
+		<Button x:Name="Race" 
+										Background="#00000000"
+								  Foreground="Black"
+										BorderBrush="#00707070"
+										Grid.Row="1"
+										Grid.Column="1" 
+								  HorizontalContentAlignment="Center"  
+										Content="[wybierz]"
+								  Click="Race_Click"/>
+		<Label x:Name="ClassLabel" 
+								 Content="Klasa:" 
+								 Grid.Row="2"/>
+		<Button x:Name="Class" 
+										Background="#00000000"
+								  Foreground="Black"
+										BorderBrush="#00707070"
+										Grid.Row="2"
+										Grid.Column="1" 
+								  HorizontalContentAlignment="Center"  
+										Content="[wybierz]"
+								  Click="Class_Click"/>
 	</Grid>
 </UserControl>

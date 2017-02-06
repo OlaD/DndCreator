@@ -38,7 +38,6 @@ namespace DndCreator.View
 								{
 												Character character = Character.Instance;
 												character.Race = (Race)RacesToChoose.SelectedItem;
-												MessageBox.Show(viewModel.ShownDescription);
 								}
 
 								private void Description_Checked(object sender, RoutedEventArgs e)

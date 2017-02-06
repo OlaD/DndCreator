@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace DndCreator.View
 {
 				/// <summary>
-				/// Interaction logic for RaceDescriptionButtons.xaml
+				/// Interaction logic for ClassPage.xaml
 				/// </summary>
-				public partial class RaceDescriptionButtons : UserControl
+				public partial class ClassPage : Page
 				{
-								public RaceDescriptionButtons()
+								public ClassPage()
 								{
 												InitializeComponent();
 								}

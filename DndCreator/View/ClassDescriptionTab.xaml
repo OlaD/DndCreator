@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="DndCreator.View.ClassDescriptionTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DndCreator.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="47*"/>
+			<RowDefinition Height="153*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="169*"/>
+			<ColumnDefinition Width="119*"/>
+		</Grid.ColumnDefinitions>
+		<WrapPanel Margin="2,2,3,3">
+			<WrapPanel.Resources>
+				<Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="RadioButton">
+					<Setter Property="Margin" Value="2.5, 2.5, 2.5, 2.5"/>
+					<Setter Property="Width" Value="150"/>
+				</Style>
+			</WrapPanel.Resources>
+			<RadioButton x:Name="GeneralDescription" Content="Opis ogólny" Checked="Description_Checked"/>
+			<RadioButton x:Name="Adventures" Content="Przygody" Checked="Description_Checked"/>
+			<RadioButton x:Name="Characteristics" Content="Charakterystyka" Checked="Description_Checked"/>
+			<RadioButton x:Name="Alignment" Content="Charakter" Checked="Description_Checked"/>
+			<RadioButton x:Name="Religion" Content="Religia" Checked="Description_Checked"/>
+			<RadioButton x:Name="Background" Content="Pochodzenie" Checked="Description_Checked"/>
+			<RadioButton x:Name="Races" Content="Rasy" Checked="Description_Checked"/>
+			<RadioButton x:Name="OtherClasses" Content="Inne klasy" Checked="Description_Checked"/>
+			<RadioButton x:Name="Role" Content="Rola" Checked="Description_Checked"/>
+		</WrapPanel>
+
+		<Border BorderBrush="Black" 
+												BorderThickness="1"
+												MinWidth="113"
+												MinHeight="188"
+												Grid.Column="1"
+												Grid.RowSpan="2" >
+			<Image x:Name="Image"
+												OpacityMask="White"
+												Grid.Column="1" 
+												Grid.Row="1"/>
+		</Border>
+
+		<Label x:Name="Description"
+											Margin="0,0,3,0" 
+											Grid.Row="1"/>
+	</Grid>
+</UserControl>

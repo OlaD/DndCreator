@@ -70,8 +70,11 @@
     <Compile Include="View\CharacterPanel.xaml.cs">
       <DependentUpon>CharacterPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RaceDescriptionButtons.xaml.cs">
-      <DependentUpon>RaceDescriptionButtons.xaml</DependentUpon>
+    <Compile Include="View\ClassDescriptionTab.xaml.cs">
+      <DependentUpon>ClassDescriptionTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassPage.xaml.cs">
+      <DependentUpon>ClassPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RacePage.xaml.cs">
       <DependentUpon>RacePage.xaml</DependentUpon>
@@ -92,7 +95,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RaceDescriptionButtons.xaml">
+    <Page Include="View\ClassDescriptionTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClassPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

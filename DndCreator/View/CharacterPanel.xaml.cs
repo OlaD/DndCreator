@@ -21,13 +21,6 @@ namespace DndCreator.View
 				/// </summary>
 				public partial class CharacterPanel : UserControl
 				{
-								public readonly static RoutedEvent PreviewEvent =
-												EventManager.RegisterRoutedEvent(
-																"PreviewEvent",
-																RoutingStrategy.Tunnel,
-																typeof(RoutedEventHandler),
-																typeof(CharacterPanel));
-
 								public CharacterPanel()
 								{
 												InitializeComponent();
@@ -35,9 +28,34 @@ namespace DndCreator.View
 												Model.Character.Instance.PropertyChanged += new PropertyChangedEventHandler(character_PropertyChanged);
 								}
 
-								private void characterRace_Click(object sender, RoutedEventArgs e)
+								public static readonly RoutedEvent RaceClickEvent =
+												EventManager.RegisterRoutedEvent("RaceClick", RoutingStrategy.Bubble,
+												typeof(RoutedEventHandler), typeof(CharacterPanel));
+
+								public event RoutedEventHandler RaceClick
 								{
-												this.RaiseEvent(new RoutedEventArgs(PreviewEvent));
+												add { AddHandler(RaceClickEvent, value); }
+												remove { RemoveHandler(RaceClickEvent, value); }
+								}
+
+								private void Race_Click(object sender, RoutedEventArgs e)
+								{
+												this.RaiseEvent(new RoutedEventArgs(RaceClickEvent, this));
+								}
+
+								public static readonly RoutedEvent ClassClickEvent =
+												EventManager.RegisterRoutedEvent("ClassClick", RoutingStrategy.Bubble,
+												typeof(RoutedEventHandler), typeof(CharacterPanel));
+
+								public event RoutedEventHandler ClassClick
+								{
+												add { AddHandler(ClassClickEvent, value); }
+												remove { RemoveHandler(ClassClickEvent, value); }
+								}
+
+								private void Class_Click(object sender, RoutedEventArgs e)
+								{
+												this.RaiseEvent(new RoutedEventArgs(ClassClickEvent, this));
 								}
 
 								private void character_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -45,7 +63,7 @@ namespace DndCreator.View
 												switch(e.PropertyName)
 												{
 																case "Race":
-																				characterRace.Content = Model.Character.Instance.Race.Name;
+																				Race.Content = Model.Character.Instance.Race.Name;
 																				break;
 												}
 								}
