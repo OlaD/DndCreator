@@ -62,16 +62,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ClassDescriptionType.cs" />
     <Compile Include="Model\FakeDataLoader.cs" />
     <Compile Include="Model\IDataLoader.cs" />
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\RaceDescriptionType.cs" />
+    <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\RaceViewModel.cs" />
     <Compile Include="View\CharacterPanel.xaml.cs">
       <DependentUpon>CharacterPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClassDescriptionTab.xaml.cs">
       <DependentUpon>ClassDescriptionTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassFeaturesTab.xaml.cs">
+      <DependentUpon>ClassFeaturesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ClassGameRulesTab.xaml.cs">
+      <DependentUpon>ClassGameRulesTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ClassPage.xaml.cs">
       <DependentUpon>ClassPage.xaml</DependentUpon>
@@ -96,6 +105,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ClassDescriptionTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClassFeaturesTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ClassGameRulesTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

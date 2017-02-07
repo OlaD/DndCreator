@@ -22,15 +22,15 @@
 																								VerticalAlignment="Top" 
 																								Content="Klasa"/>
 		<ComboBox x:Name="ClassesToChoose" 
-																								Width="120"
+																								Width="106"
 																								Height="22"
 																								HorizontalAlignment="Left"
 																								VerticalAlignment="Top"
-																								Margin="90,10,0,0"
-																								Grid.Row="1" />
-		<!--ItemsSource="{Binding RacesToChoose}"
+																								Margin="104,10,0,0"
+																								Grid.Row="1"
+																								ItemsSource="{Binding ClassesToChoose}"
 																								DisplayMemberPath="Name" 
-																								SelectedItem="{Binding SelectedRace}"/>-->
+																								SelectedItem="{Binding SelectedClass}"/>
 		<Button x:Name="Confirm"
 																		Width="75"
 																		Height="22"
@@ -41,22 +41,26 @@
 																		Content="Zatwierdź"/>
 		<!-- Click="ConfirmRace_Click"/>-->
 		<Label x:Name="ChooseClassLabel"
-																	Width="80"
+																	Width="94"
 																	Height="26"
 																	HorizontalAlignment="Left"
 																	VerticalAlignment="Top"
 																	Margin="5,8,0,0"
 																	Grid.Row="1"
 																	Content="Wybierz klasę:"/>
-		<TabControl x:Name="tabControl" Grid.Row="2">
+
+		<TabControl x:Name="tabControl" 
+														Grid.Row="2">
 			<TabItem Header="Opis">
-				<local:ClassDescriptionTab />
+				<local:ClassDescriptionTab ShownDescription="{Binding ElementName=ClassesToChoose, Path=SelectedItem.Name}"/>
 			</TabItem>
-			<TabItem Header="Zasady gry">
-				<Grid Background="#FFE5E5E5"/>
+			<TabItem Header="Zasady gry i umiejętności">
+				<local:ClassGameRulesTab />
 			</TabItem>
-			<TabItem Header="Właściwości"/>
-			<TabItem Header="Rozwój"/>
+			<TabItem Header="Właściwości klasowe">
+				<local:ClassFeaturesTab />
+			</TabItem>
+			<TabItem Header="Korzyści z poziomów"/>
 		</TabControl>
 	</Grid>
 </Page>

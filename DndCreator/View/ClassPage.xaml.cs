@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using DndCreator.Model;
+using DndCreator.ViewModel;
+using System.ComponentModel;
 
 namespace DndCreator.View
 {
@@ -20,9 +15,26 @@ namespace DndCreator.View
 				/// </summary>
 				public partial class ClassPage : Page
 				{
+								private ClassViewModel viewModel;
+
 								public ClassPage()
 								{
 												InitializeComponent();
+												viewModel = ClassViewModel.Instance;
+												this.DataContext = viewModel;
+												viewModel.PropertyChanged += new PropertyChangedEventHandler(ClassViewModel_PropertyChanged);
+								}
+
+								private void ClassViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+								{
+												switch (e.PropertyName)
+												{
+																case "SelectedClass":
+																				//Description.Content = viewModel.ShownDescription;
+																				break;
+																case "SelectedDescription":
+																				break;
+												}
 								}
 				}
 }

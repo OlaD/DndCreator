@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DndCreator.Model
 {
-				public class Race
+				class Class
 				{
-								public static List<Race> RacesList { get; set; }
+								public static List<Class> ClassesList { get; set; }
 
 								public string Name { get; }
-								public Dictionary<RaceDescriptionType, string> Description { get; }
+								public Dictionary<ClassDescriptionType, string> Description { get; }
 
-								public Race(string name, Dictionary<RaceDescriptionType, string> description)
+								public Class(string name, Dictionary<ClassDescriptionType, string> description=null)
 								{
 												Name = name;
 												Description = description;

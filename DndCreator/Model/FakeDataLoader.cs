@@ -11,6 +11,7 @@ namespace DndCreator.Model
 								public void LoadData()
 								{
 												LoadRaces();
+												LoadClasses();
 								}
 								
 								private void LoadRaces()
@@ -29,6 +30,15 @@ namespace DndCreator.Model
 												Dictionary<RaceDescriptionType, string> dwarfDescr = new Dictionary<RaceDescriptionType, string>();
 												dwarfDescr.Add(RaceDescriptionType.GeneralDescription, "krasie");
 												Race.RacesList.Add(new Race("Krasnolud", dwarfDescr));
+								}
+
+								private void LoadClasses()
+								{
+												Class.ClassesList = new List<Class>();
+
+												Class.ClassesList.Add(new Class("Bard"));
+												Class.ClassesList.Add(new Class("Barbarzyńca"));
+												Class.ClassesList.Add(new Class("Czarodziej"));
 								}
 				}
 }

@@ -23,7 +23,10 @@ namespace DndCreator.ViewModel
 												}
 								}
 
-								public List<Race> RacesToChoose { get; set; }
+								public List<Race> RacesToChoose
+								{ 
+												get { return Race.RacesList; } 
+								}
 
 								private Race selectedRace;
 								public Race SelectedRace 
@@ -69,10 +72,7 @@ namespace DndCreator.ViewModel
 												}
 								}
 
-								private RaceViewModel()
-								{
-												RacesToChoose = Race.RacesList;
-								}
+								private RaceViewModel() {}
 
 								public event PropertyChangedEventHandler PropertyChanged;
 								private void OnPropertyChanged(string property)

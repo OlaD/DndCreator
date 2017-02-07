@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using DndCreator.Model;
@@ -20,11 +16,11 @@ namespace DndCreator.View
 												InitializeComponent();
 												viewModel = RaceViewModel.Instance;
 												this.DataContext = viewModel;
-												viewModel.PropertyChanged += new PropertyChangedEventHandler(shownDescription_PropertyChanged);
+												viewModel.PropertyChanged += new PropertyChangedEventHandler(RaceViewModel_PropertyChanged);
 												GeneralDescription.IsChecked = true;
 								}
 
-								private void shownDescription_PropertyChanged(object sender, PropertyChangedEventArgs e)
+								private void RaceViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
 								{
 												switch (e.PropertyName)
 												{

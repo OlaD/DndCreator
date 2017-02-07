@@ -47,6 +47,7 @@
 
 		<Label x:Name="Description"
 											Margin="0,0,3,0" 
-											Grid.Row="1"/>
+											Grid.Row="1"
+											Content="{Binding Path=ShownDescription}"/>
 	</Grid>
 </UserControl>
