@@ -54,11 +54,10 @@ namespace DndCreator.ViewModel
 								{
 												get
 												{
-																return "aaaaaaaaaaaaaaaaaaaaaaa";
-																//if (SelectedClass != null && SelectedClass.Description.ContainsKey(SelectedDescription))
-																//				return SelectedClass.Description[SelectedDescription];
-																//else
-																//				return null;
+																if (SelectedClass != null && SelectedClass.Description.ContainsKey(SelectedDescription))
+																	  	return SelectedClass.Description[SelectedDescription];
+																else
+																				return "-";
 												}
 								}
 

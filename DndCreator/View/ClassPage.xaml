@@ -52,7 +52,7 @@
 		<TabControl x:Name="tabControl" 
 														Grid.Row="2">
 			<TabItem Header="Opis">
-				<local:ClassDescriptionTab ShownDescription="{Binding ElementName=ClassesToChoose, Path=SelectedItem.Name}"/>
+				<local:ClassDescriptionTab x:Name="DescriptionTab" ChangeDescription="DescriptionTab_ChangeDescription"/>
 			</TabItem>
 			<TabItem Header="Zasady gry i umiejętności">
 				<local:ClassGameRulesTab />

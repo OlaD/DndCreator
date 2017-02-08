@@ -30,11 +30,22 @@ namespace DndCreator.View
 												switch (e.PropertyName)
 												{
 																case "SelectedClass":
-																				//Description.Content = viewModel.ShownDescription;
+																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
 																				break;
 																case "SelectedDescription":
+																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
 																				break;
 												}
+								}
+
+								private void DescriptionTab_ChangeDescription(object sender, RoutedEventArgs e)
+								{
+												RadioButton selectedButton = (RadioButton)e.OriginalSource;
+												ClassDescriptionType selectedDescription;
+												if (Enum.TryParse<ClassDescriptionType>(selectedButton.Name, out selectedDescription))
+																viewModel.SelectedDescription = selectedDescription;
+												else
+																throw new NotImplementedException();
 								}
 				}
 }

@@ -36,9 +36,23 @@ namespace DndCreator.Model
 								{
 												Class.ClassesList = new List<Class>();
 
-												Class.ClassesList.Add(new Class("Bard"));
-												Class.ClassesList.Add(new Class("Barbarzyńca"));
-												Class.ClassesList.Add(new Class("Czarodziej"));
+												Dictionary<ClassDescriptionType, string> bardDescr = new Dictionary<ClassDescriptionType, string>();
+												bardDescr.Add(ClassDescriptionType.GeneralDescription, "opis barda");
+												bardDescr.Add(ClassDescriptionType.Adventures, "przygody barda");
+												bardDescr.Add(ClassDescriptionType.Religion, "religia barda");
+												Class.ClassesList.Add(new Class("Bard", bardDescr));
+
+												Dictionary<ClassDescriptionType, string> barbarianDescr = new Dictionary<ClassDescriptionType, string>();
+												barbarianDescr.Add(ClassDescriptionType.GeneralDescription, "opis barbarzyńcy");
+												barbarianDescr.Add(ClassDescriptionType.Adventures, "przygody barbarzyńcy");
+												barbarianDescr.Add(ClassDescriptionType.Religion, "religia barbarzyńcy");
+												Class.ClassesList.Add(new Class("Barbarzyńca", barbarianDescr));
+
+												Dictionary<ClassDescriptionType, string> wizardDescr = new Dictionary<ClassDescriptionType, string>();
+												wizardDescr.Add(ClassDescriptionType.GeneralDescription, "opis maga");
+												wizardDescr.Add(ClassDescriptionType.Adventures, "przygody maga");
+												wizardDescr.Add(ClassDescriptionType.Religion, "religia maga");
+												Class.ClassesList.Add(new Class("Czarodziej", wizardDescr));
 								}
 				}
 }

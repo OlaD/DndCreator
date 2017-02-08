@@ -13,7 +13,7 @@ namespace DndCreator.Model
 								public string Name { get; }
 								public Dictionary<ClassDescriptionType, string> Description { get; }
 
-								public Class(string name, Dictionary<ClassDescriptionType, string> description=null)
+								public Class(string name, Dictionary<ClassDescriptionType, string> description)
 								{
 												Name = name;
 												Description = description;
