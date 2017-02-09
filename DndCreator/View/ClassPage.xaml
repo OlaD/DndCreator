@@ -16,46 +16,48 @@
 		</Grid.RowDefinitions>
 
 		<Label x:Name="Header"
-																								FontFamily="BlackChancery"
-																								FontSize="26.667"
-																								HorizontalAlignment="Left"
-																								VerticalAlignment="Top" 
-																								Content="Klasa"/>
+								 FontFamily="BlackChancery"
+								 FontSize="26.667"
+								 HorizontalAlignment="Left"
+								 VerticalAlignment="Top" 
+								 Content="Klasa"/>
 		<ComboBox x:Name="ClassesToChoose" 
-																								Width="106"
-																								Height="22"
-																								HorizontalAlignment="Left"
-																								VerticalAlignment="Top"
-																								Margin="104,10,0,0"
-																								Grid.Row="1"
-																								ItemsSource="{Binding ClassesToChoose}"
-																								DisplayMemberPath="Name" 
-																								SelectedItem="{Binding SelectedClass}"/>
+												Width="106"
+												Height="22"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Top"
+												Margin="104,10,0,0"
+												Grid.Row="1"
+												ItemsSource="{Binding ClassesToChoose}"
+												DisplayMemberPath="Name" 
+												SelectedItem="{Binding SelectedClass}"/>
 		<Button x:Name="Confirm"
-																		Width="75"
-																		Height="22"
-																		HorizontalAlignment="Left"
-																		VerticalAlignment="Top"
-																		Margin="215,10,0,0"
-																		Grid.Row="1"
-																		Content="Zatwierdź"/>
+										Width="75"
+										Height="22"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										Margin="215,10,0,0"
+										Grid.Row="1"
+										Content="Zatwierdź"/>
 		<!-- Click="ConfirmRace_Click"/>-->
 		<Label x:Name="ChooseClassLabel"
-																	Width="94"
-																	Height="26"
-																	HorizontalAlignment="Left"
-																	VerticalAlignment="Top"
-																	Margin="5,8,0,0"
-																	Grid.Row="1"
-																	Content="Wybierz klasę:"/>
+									Width="94"
+									Height="26"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top"
+									Margin="5,8,0,0"
+									Grid.Row="1"
+									Content="Wybierz klasę:"/>
 
 		<TabControl x:Name="tabControl" 
 														Grid.Row="2">
+
 			<TabItem Header="Opis">
-				<local:ClassDescriptionTab x:Name="DescriptionTab" ChangeDescription="DescriptionTab_ChangeDescription"/>
+				<local:ClassDescriptionTab x:Name="DescriptionTab" 
+																															ChangeDescription="DescriptionTab_ChangeDescription"/>
 			</TabItem>
 			<TabItem Header="Zasady gry i umiejętności">
-				<local:ClassGameRulesTab />
+				<local:ClassGameRuleTab x:Name="GameRuleTab"/>
 			</TabItem>
 			<TabItem Header="Właściwości klasowe">
 				<local:ClassFeaturesTab />

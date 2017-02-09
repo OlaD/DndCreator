@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DndCreator.Model
 {
@@ -40,19 +36,34 @@ namespace DndCreator.Model
 												bardDescr.Add(ClassDescriptionType.GeneralDescription, "opis barda");
 												bardDescr.Add(ClassDescriptionType.Adventures, "przygody barda");
 												bardDescr.Add(ClassDescriptionType.Religion, "religia barda");
-												Class.ClassesList.Add(new Class("Bard", bardDescr));
+												List<Skill> bardSkills = new List<Skill>();
+												bardSkills.Add(new Skill("Umiejętność barda", new Ability("Charyzma", "Cha")));
+												Class.ClassesList.Add(
+																new Class("Bard", bardDescr, "atrybuty barda", "charakter barda", 1, 
+																										new ClassStartingGold(new Dices(4,4), 10),
+																										bardSkills, 1));
 
 												Dictionary<ClassDescriptionType, string> barbarianDescr = new Dictionary<ClassDescriptionType, string>();
 												barbarianDescr.Add(ClassDescriptionType.GeneralDescription, "opis barbarzyńcy");
 												barbarianDescr.Add(ClassDescriptionType.Adventures, "przygody barbarzyńcy");
 												barbarianDescr.Add(ClassDescriptionType.Religion, "religia barbarzyńcy");
-												Class.ClassesList.Add(new Class("Barbarzyńca", barbarianDescr));
+												List<Skill> barbarianSkills = new List<Skill>();
+												barbarianSkills.Add(new Skill("Umiejętność barbarzyńcy", new Ability("Siła", "S")));
+												Class.ClassesList.Add(
+																new Class("Barbarzyńca", barbarianDescr, "atrybuty barbarzyńcy", "charakter barbarzyńcy", 2,
+																										new ClassStartingGold(new Dices(4, 4), 10),
+																								  barbarianSkills, 2));
 
 												Dictionary<ClassDescriptionType, string> wizardDescr = new Dictionary<ClassDescriptionType, string>();
-												wizardDescr.Add(ClassDescriptionType.GeneralDescription, "opis maga");
-												wizardDescr.Add(ClassDescriptionType.Adventures, "przygody maga");
-												wizardDescr.Add(ClassDescriptionType.Religion, "religia maga");
-												Class.ClassesList.Add(new Class("Czarodziej", wizardDescr));
+												wizardDescr.Add(ClassDescriptionType.GeneralDescription, "opis czarodzieja");
+												wizardDescr.Add(ClassDescriptionType.Adventures, "przygody czarodzieja");
+												wizardDescr.Add(ClassDescriptionType.Religion, "religia czarodzieja");
+												List<Skill> wizardSkills = new List<Skill>();
+												wizardSkills.Add(new Skill("Umiejętność czarodzieja", new Ability("Inteligencja", "Int")));
+												Class.ClassesList.Add(
+																new Class("Czarodziej", wizardDescr, "atrybuty czarodzieja", "charakter czarodzieja", 3,
+																										new ClassStartingGold(new Dices(3, 4), 10),
+																										wizardSkills, 3));
 								}
 				}
 }

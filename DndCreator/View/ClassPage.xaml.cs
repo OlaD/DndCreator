@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using DndCreator.Model;
@@ -31,6 +28,7 @@ namespace DndCreator.View
 												{
 																case "SelectedClass":
 																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
+																				GameRuleTab.DataContext = viewModel.SelectedClass;
 																				break;
 																case "SelectedDescription":
 																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
