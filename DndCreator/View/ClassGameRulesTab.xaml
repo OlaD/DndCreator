@@ -32,7 +32,7 @@
 			<ListBox x:Name="listBox" 
 												Height="100" 
 												ItemsSource="{Binding ClassSkills}"
-												DisplayMemberPath="Name"/>
+												DisplayMemberPath="SkillWithAbility"/>
 		</StackPanel>
 
 	</Grid>
