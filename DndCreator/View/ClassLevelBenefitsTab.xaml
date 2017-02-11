@@ -23,7 +23,6 @@
 		<Rectangle Grid.ColumnSpan="6" Fill="{DynamicResource FieldLabelBackground}" />
 		<Label Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Rzut obronny na" />
 
-
 		<DataGrid x:Name="dataGrid" Grid.Row="1" Grid.ColumnSpan="6">
 			<DataGrid.Columns>
 				<DataGridTextColumn x:Name="Level" Binding="{Binding Level}" ClipboardContentBinding="{x:Null}" Header="Poziom"/>

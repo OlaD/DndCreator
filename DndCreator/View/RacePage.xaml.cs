@@ -30,7 +30,7 @@ namespace DndCreator.View
 												}
 								}
 
-								private void ConfirmRace_Click(object sender, RoutedEventArgs e)
+								private void Confirm_Click(object sender, RoutedEventArgs e)
 								{
 												Character character = Character.Instance;
 												character.Race = (Race)RacesToChoose.SelectedItem;

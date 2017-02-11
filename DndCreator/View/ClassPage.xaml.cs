@@ -44,5 +44,11 @@ namespace DndCreator.View
 												else
 																throw new NotImplementedException();
 								}
+
+								private void Confirm_Click(object sender, RoutedEventArgs e)
+								{
+												Character character = Character.Instance;
+												character.Class = (Class)ClassesToChoose.SelectedItem;
+								}
 				}
 }

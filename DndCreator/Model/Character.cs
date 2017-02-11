@@ -32,6 +32,20 @@ namespace DndCreator.Model
 												} 
 								}
 
+								private Class @class;
+								public Class Class
+								{
+												get { return @class; }
+												set
+												{
+																if(@class != value)
+																{
+																				@class = value;
+																				OnPropertyChanged("Class");
+																}
+												}
+								}
+
 								public event PropertyChangedEventHandler PropertyChanged;
 
 								private void OnPropertyChanged(string property)

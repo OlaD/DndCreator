@@ -38,8 +38,8 @@
 										VerticalAlignment="Top"
 										Margin="215,10,0,0"
 										Grid.Row="1"
-										Content="Zatwierdź"/>
-		<!-- Click="ConfirmRace_Click"/>-->
+										Content="Zatwierdź"
+										Click="Confirm_Click"/>
 		<Label x:Name="ChooseClassLabel"
 									Width="94"
 									Height="26"

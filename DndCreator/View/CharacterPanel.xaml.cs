@@ -65,6 +65,9 @@ namespace DndCreator.View
 																case "Race":
 																				Race.Content = Model.Character.Instance.Race.Name;
 																				break;
+																case "Class":
+																				Class.Content = Model.Character.Instance.Class.Name;
+																				break;
 												}
 								}
 				}

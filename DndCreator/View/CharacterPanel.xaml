@@ -24,7 +24,7 @@
 								 Grid.Column="0"
 								 Grid.ColumnSpan="2"
 								 HorizontalContentAlignment="Center"
-								 Content="Karta Postaci"  >
+								 Content="Karta Postaci">
 								<Label.Background>
 												<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 																<GradientStop Color="White" Offset="0"/>

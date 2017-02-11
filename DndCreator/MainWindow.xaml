@@ -21,7 +21,7 @@
 												Grid.ColumnSpan="1" 
 												BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
 			<view:CharacterPanel 
-												RaceClick = "CharacterPanel_RaceClick"
+												RaceClick="CharacterPanel_RaceClick"
 												ClassClick="CharacterPanel_ClassClick" />
 		</Border>
 

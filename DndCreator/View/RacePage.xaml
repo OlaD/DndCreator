@@ -39,7 +39,7 @@
 								  Margin="215,10,0,0"
 										Grid.Row="1"
 										Content="Zatwierdź"
-								  Click="ConfirmRace_Click"/>
+								  Click="Confirm_Click"/>
 		<Label x:Name="ChooseRaceLabel"
 									Width="80"
 								 Height="26"
@@ -48,7 +48,7 @@
 								 Margin="5,8,0,0"
 								 Grid.Row="1"
 								 Content="Wybierz rasę:"/>
-		<GroupBox x:Name="RaceDescriptionGroupBox"
+		<GroupBox x:Name="DescriptionGroupBox"
 												Header="Opis rasy" 
 												Margin="5,0,5,0"
 												Grid.Row="2"
