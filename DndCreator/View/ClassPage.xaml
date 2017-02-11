@@ -57,12 +57,14 @@
 																															ChangeDescription="DescriptionTab_ChangeDescription"/>
 			</TabItem>
 			<TabItem Header="Zasady gry i umiejętności">
-				<local:ClassGameRuleTab x:Name="GameRuleTab"/>
+				<local:ClassGameRuleTab DataContext="{Binding SelectedClass}"/>
 			</TabItem>
 			<TabItem Header="Właściwości klasowe">
-				<local:ClassFeaturesTab />
+				<local:ClassFeaturesTab DataContext="{Binding SelectedClass}"/>
 			</TabItem>
-			<TabItem Header="Korzyści z poziomów"/>
+			<TabItem Header="Korzyści z poziomów">
+				<local:ClassLevelBenefitsTab />
+			</TabItem>
 		</TabControl>
 	</Grid>
 </Page>

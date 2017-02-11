@@ -6,32 +6,32 @@
              xmlns:local="clr-namespace:DndCreator.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+	<Grid ShowGridLines="True">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="51*"/>
 			<ColumnDefinition Width="49*"/>
 		</Grid.ColumnDefinitions>
 		<StackPanel>
-			<Label x:Name="AbilitiesLabel" Content="Atrybuty"/>
+			<Label x:Name="AbilitiesLabel" Content="Atrybuty" Background="{DynamicResource FieldLabelBackground}" />
 			<Label x:Name="Abilities" Height="112" Content="{Binding AbilitiesRule}"/>
-			<Label x:Name="AlignmentLabel" Content="Charakter"/>
+			<Label x:Name="AlignmentLabel" Content="Charakter" Background="{DynamicResource FieldLabelBackground}"/>
 			<Label x:Name="Alignment" Content="{Binding AlignmentRule}"/>
-			<Label x:Name="HitDieLabel" Content="Kostka Wytrzymałości"/>
+			<Label x:Name="HitDieLabel" Content="Kostka Wytrzymałości" Background="{DynamicResource FieldLabelBackground}"/>
 			<Label x:Name="HitDie" Content="{Binding HitDie}"/>
-			<Label x:Name="StartingGoldFormulaLabel" Content="Początkowe złoto (wzór)"/>
+			<Label x:Name="StartingGoldFormulaLabel" Content="Początkowe złoto (wzór)" Background="{DynamicResource FieldLabelBackground}"/>
 			<Label x:Name="StartingGoldFormula" Content="{Binding StartingGold.Formula}"/>
-			<Label x:Name="StartingGoldAverageLabel" Content="Początkowe złoto (średnia wartość)"/>
+			<Label x:Name="StartingGoldAverageLabel" Content="Początkowe złoto (średnia wartość)" Background="{DynamicResource FieldLabelBackground}"/>
 			<Label x:Name="StartingGoldAverage" Content="{Binding StartingGold.AverageAmountString}"/>
 		</StackPanel>
 		<StackPanel Grid.Column="1">
-			<Label x:Name="label8" Content="Punkty umiejętności na 1 poziomie:"/>
-			<Label x:Name="label9" Content="..."/>
-			<Label x:Name="label10" Content="Punkty umiejętności na każdym następnym poziomie:"/>
-			<Label x:Name="label11" Content="..."/>
-			<Label x:Name="label12" Content="Umiejętności klasowe:"/>
+			<Label x:Name="label8" Content="Punkty umiejętności na 1 poziomie:" Background="{DynamicResource FieldLabelBackground}"/>
+			<Label x:Name="label9" Content="{Binding ClassSkills.SkillPointsAtFirstLevelFormula}"/>
+			<Label x:Name="label10" Content="Punkty umiejętności na każdym następnym poziomie:" Background="{DynamicResource FieldLabelBackground}"/>
+			<Label x:Name="label11" Content="{Binding ClassSkills.SkillPointsFormula}"/>
+			<Label x:Name="label12" Content="Umiejętności klasowe:" Background="{DynamicResource FieldLabelBackground}"/>
 			<ListBox x:Name="listBox" 
 												Height="100" 
-												ItemsSource="{Binding ClassSkills}"
+												ItemsSource="{Binding ClassSkills.Skills}"
 												DisplayMemberPath="SkillWithAbility"/>
 		</StackPanel>
 

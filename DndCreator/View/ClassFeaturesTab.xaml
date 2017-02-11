@@ -17,14 +17,17 @@
 		</Grid.ColumnDefinitions>
 
 		<ListBox x:Name="Features" 
-											Grid.RowSpan="2"/>
-		<Label x:Name="Name"
-								 Grid.Column="1"
-								 VerticalAlignment="Top" 
-								 Content="Nazwa" />
-		<Label x:Name="Description"
-								 Grid.Column="1" 
-								 Grid.Row="1" 
-								 Content="Opis" />
+											Grid.RowSpan="2"
+											ItemsSource="{Binding Features}"
+											DisplayMemberPath="Name"/>
+		<StackPanel Grid.Column="1" DataContext="{Binding ElementName=Features, Path=SelectedItem}">
+			<Label x:Name="Name"
+								 VerticalAlignment="Top"
+								 Background="{StaticResource FieldLabelBackground}" 
+								 Content="{Binding Name}" />
+			<Label x:Name="Description"
+								 Content="{Binding Description}" />
+		</StackPanel>
+
 	</Grid>
 </UserControl>

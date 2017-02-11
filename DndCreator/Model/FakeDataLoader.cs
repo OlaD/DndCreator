@@ -31,39 +31,48 @@ namespace DndCreator.Model
 								private void LoadClasses()
 								{
 												Class.ClassesList = new List<Class>();
+												Class.ClassesList.Add(CreateFakeClass("bard", 1));
+												Class.ClassesList.Add(CreateFakeClass("czarodziej", 2));
+												Class.ClassesList.Add(CreateFakeClass("wojownik", 3));
+								}
 
-												Dictionary<ClassDescriptionType, string> bardDescr = new Dictionary<ClassDescriptionType, string>();
-												bardDescr.Add(ClassDescriptionType.GeneralDescription, "opis barda");
-												bardDescr.Add(ClassDescriptionType.Adventures, "przygody barda");
-												bardDescr.Add(ClassDescriptionType.Religion, "religia barda");
-												List<Skill> bardSkills = new List<Skill>();
-												bardSkills.Add(new Skill("Umiejętność barda", new Ability("Charyzma", "Cha")));
-												Class.ClassesList.Add(
-																new Class("Bard", bardDescr, "atrybuty barda", "charakter barda", 1, 
-																										new ClassStartingGold(new Dices(4,4), 10),
-																										bardSkills, 1));
+								private Class CreateFakeClass(string name, uint number)
+								{
+												string genitiveName = name + "a";
+												
+												Dictionary<ClassDescriptionType, string> descr = new Dictionary<ClassDescriptionType, string>();
+												descr.Add(ClassDescriptionType.GeneralDescription, "opis " + genitiveName);
+												descr.Add(ClassDescriptionType.Adventures, "przygody " + genitiveName);
+												descr.Add(ClassDescriptionType.Religion, "religia " + genitiveName);
 
-												Dictionary<ClassDescriptionType, string> barbarianDescr = new Dictionary<ClassDescriptionType, string>();
-												barbarianDescr.Add(ClassDescriptionType.GeneralDescription, "opis barbarzyńcy");
-												barbarianDescr.Add(ClassDescriptionType.Adventures, "przygody barbarzyńcy");
-												barbarianDescr.Add(ClassDescriptionType.Religion, "religia barbarzyńcy");
-												List<Skill> barbarianSkills = new List<Skill>();
-												barbarianSkills.Add(new Skill("Umiejętność barbarzyńcy", new Ability("Siła", "S")));
-												Class.ClassesList.Add(
-																new Class("Barbarzyńca", barbarianDescr, "atrybuty barbarzyńcy", "charakter barbarzyńcy", 2,
-																										new ClassStartingGold(new Dices(4, 4), 10),
-																								  barbarianSkills, 2));
+												List<Skill> skillList = new List<Skill>();
+												skillList.Add(new Skill("umiejętność " + genitiveName, new Ability("atut" + number, "at" + number)));
+												ClassSkills skills = new ClassSkills(number, skillList);
 
-												Dictionary<ClassDescriptionType, string> wizardDescr = new Dictionary<ClassDescriptionType, string>();
-												wizardDescr.Add(ClassDescriptionType.GeneralDescription, "opis czarodzieja");
-												wizardDescr.Add(ClassDescriptionType.Adventures, "przygody czarodzieja");
-												wizardDescr.Add(ClassDescriptionType.Religion, "religia czarodzieja");
-												List<Skill> wizardSkills = new List<Skill>();
-												wizardSkills.Add(new Skill("Umiejętność czarodzieja", new Ability("Inteligencja", "Int")));
-												Class.ClassesList.Add(
-																new Class("Czarodziej", wizardDescr, "atrybuty czarodzieja", "charakter czarodzieja", 3,
-																										new ClassStartingGold(new Dices(3, 4), 10),
-																										wizardSkills, 3));
+												string abilitiesRule = "atrybuty " + genitiveName;
+												string alignmentRule = "charakter " + genitiveName;
+
+												ClassStartingGold st = new ClassStartingGold(new Dices(number, number), number);
+
+												List<ClassFeature> features = new List<ClassFeature>();
+												LevelBenefits<string> featureLevelBenefits = new LevelBenefits<string>();
+												featureLevelBenefits.Add(number + "/dzień");
+												featureLevelBenefits.Add("+" + number);
+												features.Add(new ClassFeature("właściwość " + genitiveName, "...", featureLevelBenefits));
+												features.Add(new ClassFeature("właściwość1 " + genitiveName, "...", null));
+												features.Add(new ClassFeature("właściwość2 " + genitiveName, "...", null));
+
+												LevelBenefits<List<Feature>> featuresOnLevels = new LevelBenefits<List<Feature>>();
+												featuresOnLevels.Add(new List<Feature>());
+												featuresOnLevels.Add(new List<Feature>());
+												featuresOnLevels.Add(new List<Feature>());
+												featuresOnLevels[1].Add(features[0]);
+												featuresOnLevels[2].Add(features[0]);
+												featuresOnLevels[2].Add(features[1]);
+												featuresOnLevels[3].Add(features[2]);
+
+												Class c = new Class(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels);
+												return c;
 								}
 				}
 }

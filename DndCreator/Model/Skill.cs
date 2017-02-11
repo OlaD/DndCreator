@@ -1,6 +1,6 @@
 ﻿namespace DndCreator.Model
 {
-				class Skill
+				public class Skill
 				{
 								public string Name { get; }
 								public Ability KeyAbility { get; }

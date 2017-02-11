@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DndCreator.Model
 {
-				enum ClassDescriptionType
+				public enum ClassDescriptionType
 				{
 								GeneralDescription,
 								Adventures,

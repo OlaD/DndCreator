@@ -27,8 +27,7 @@ namespace DndCreator.View
 												switch (e.PropertyName)
 												{
 																case "SelectedClass":
-																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
-																				GameRuleTab.DataContext = viewModel.SelectedClass;
+																				DescriptionTab.ShownDescription = viewModel.ShownDescription;																				
 																				break;
 																case "SelectedDescription":
 																				DescriptionTab.ShownDescription = viewModel.ShownDescription;

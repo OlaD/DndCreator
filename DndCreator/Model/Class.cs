@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DndCreator.Model
 {
-				class Class
+				public class Class
 				{
 								public static List<Class> ClassesList { get; set; }
 
@@ -16,14 +12,16 @@ namespace DndCreator.Model
 								public string AlignmentRule { get; }
 								public Dice HitDie { get; }
 								public ClassStartingGold StartingGold { get; }
-								public List<Skill> ClassSkills { get; }
-								public uint SkillPoints { get; }
+								public ClassSkills ClassSkills { get; }
+								public List<ClassFeature> Features { get; }
+								public LevelBenefits<List<Feature>> FeaturesOnLevels { get; }
 
 								public Class(string name,
 																				Dictionary<ClassDescriptionType, string> description,
 																				string abilitiesRule, string alignmentRule, uint hitDieSides,
 																				ClassStartingGold startingGold,
-																				List<Skill> classSkills, uint skillPoints)
+																				ClassSkills classSkills,
+																				List<ClassFeature> features, LevelBenefits<List<Feature>> featuresOnLevels)
 								{
 												Name = name;
 												Description = description;
@@ -32,7 +30,8 @@ namespace DndCreator.Model
 												HitDie = new Dice(hitDieSides);
 												StartingGold = startingGold;
 												ClassSkills = classSkills;
-												SkillPoints = skillPoints;
+												Features = features;
+												FeaturesOnLevels = featuresOnLevels;
 								}
 				}
 }
