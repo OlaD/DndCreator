@@ -71,7 +71,27 @@ namespace DndCreator.Model
 												featuresOnLevels[2].Add(features[1]);
 												featuresOnLevels[3].Add(features[2]);
 
-												Class c = new Class(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels);
+												BaseAttackBonusType baseAttack;
+												switch(number % 3)
+												{
+																case 0:
+																				baseAttack = BaseAttackBonusType.Good;
+																				break;
+																case 1:
+																				baseAttack = BaseAttackBonusType.Average;
+																				break;
+																default:
+																				baseAttack = BaseAttackBonusType.Poor;
+																				break;
+												}
+
+												BaseSaveBonusType saveBonus;
+												if (number % 2 == 0)
+																saveBonus = BaseSaveBonusType.Good;
+												else
+																saveBonus = BaseSaveBonusType.Poor;
+
+												Class c = new Class(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels, baseAttack, saveBonus, saveBonus, saveBonus);
 												return c;
 								}
 				}

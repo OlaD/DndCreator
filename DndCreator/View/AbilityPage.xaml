@@ -8,92 +8,29 @@
       d:DesignHeight="511.8" d:DesignWidth="402"
       Title="AbilityPage">
 
-	<Grid>
+	<Grid Margin="0,0,0,0">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="23*"/>
-			<RowDefinition Height="27*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="23*"/>
-			<ColumnDefinition Width="27*"/>
+			<ColumnDefinition Width="Auto"/>
 		</Grid.ColumnDefinitions>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="Auto"/>
-				<ColumnDefinition Width="55*"/>
-			</Grid.ColumnDefinitions>
-			<Label x:Name="Ability" Background="{StaticResource FieldLabelBackground}" Content="Atrybut"/>
-			<Label x:Name="Score" Background="{StaticResource FieldLabelBackground}" Content="Wartość" Grid.Column="1"/>
-			<Label x:Name="Strength" Content="Siła" Grid.Row="1"/>
-			<Label x:Name="StrengthScore" Content="-" Grid.Column="1" Grid.Row="1"/>
-			<Label x:Name="RandomScore0" Content="0" Grid.Column="2" Grid.Row="1" HorizontalContentAlignment="Center"/>
-			<Label x:Name="Dexterity" Content="Zręczność" Grid.Row="2"/>
-			<Label x:Name="DexterityScore" Content="-" Grid.Column="1" Grid.Row="2"/>
-			<Label x:Name="RandomScore1" Content="0" Grid.Column="2" Grid.Row="2" HorizontalContentAlignment="Center"/>
-			<Label x:Name="Constitution" Content="Budowa" Grid.Row="3"/>
-			<Label x:Name="ConstitutionScore" Content="-" Grid.Column="1" Grid.Row="3"/>
-			<Label x:Name="RandomScore2" Content="0" Grid.Column="2" Grid.Row="3" HorizontalContentAlignment="Center"/>
-			<Label x:Name="Intelligence" Content="Intelekt" Grid.Row="4"/>
-			<Label x:Name="IntelligenceScore" Content="-" Grid.Column="1" Grid.Row="4"/>
-			<Label x:Name="RandomScore3" Content="0" Grid.Column="2" Grid.Row="4" HorizontalContentAlignment="Center"/>
-			<Label x:Name="Wisdom" Content="Roztropność" Grid.Row="5"/>
-			<Label x:Name="WisdomScore" Content="-" Grid.Column="1" Grid.Row="5"/>
-			<Label x:Name="RandomScore4" Content="0" Grid.Column="2" Grid.Row="5" HorizontalContentAlignment="Center"/>
-			<Label x:Name="Charisma" Content="Charyzma" Grid.Row="6"/>
-			<Label x:Name="CharismaScore" Content="-" Grid.Column="1" Grid.Row="6"/>
-			<Label x:Name="RandomScore5" Content="0" Grid.Column="2" Grid.Row="6" HorizontalContentAlignment="Center"/>
-			<Button x:Name="Confirm" Content="Zatwierdź" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="7" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-			<Button x:Name="Random" Content="Losuj" Grid.Column="2" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="7" VerticalAlignment="Top" Width="35"/>
-		</Grid>
-		<TabControl x:Name="tabControl" Grid.Column="1">
-			<TabItem Header="Opis atrybutu">
-				<Grid Background="#FFE5E5E5">
-					<TextBlock x:Name="AbilityDescription" 
-																Text="..."
-																TextWrapping="WrapWithOverflow"/>
-				</Grid>
-			</TabItem>
-			<TabItem Header="Atrybuty klasy">
-				<Grid Background="#FFE5E5E5">
-					<TextBlock x:Name="ClassAbilities" 
-																Text="Gdy wybierzesz klasę, pojawi się tu informacja, jakie atrybuty mają największe znaczenie dla tej klasy."
-																TextWrapping="WrapWithOverflow"/>
-				</Grid>
-			</TabItem>
-		</TabControl>
+
+		<Label x:Name="Header"
+								 FontFamily="BlackChancery"
+								 FontSize="26.667"
+								 HorizontalAlignment="Left"
+								 VerticalAlignment="Top" 
+								 Content="Atrybuty"/>
+
 		<DataGrid x:Name="dataGrid" Grid.Row="1">
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Atrybut"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Wartość"/>
+				<DataGridComboBoxColumn ClipboardContentBinding="{x:Null}" Header="Wartość" SelectedValueBinding="{x:Null}" SelectedItemBinding="{x:Null}" TextBinding="{x:Null}"/>
 				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Modyfikator"/>
 				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Całkowity modyfikator"/>
-			</DataGrid.Columns>
-		</DataGrid>
-		<DataGrid x:Name="dataGrid1" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0">
-			<DataGrid.Columns>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Wartość"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Modyfikator"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="0"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="1"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="2"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="3"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="4"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="5"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="6"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="7"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="8"/>
-				<DataGridTextColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="9"/>
 			</DataGrid.Columns>
 		</DataGrid>
 

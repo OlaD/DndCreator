@@ -62,6 +62,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Ability.cs" />
+    <Compile Include="Model\BaseAttackBonusType.cs" />
+    <Compile Include="Model\BaseSaveBonusType.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ClassDescriptionType.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="View\ClassGameRulesTab.xaml.cs">
       <DependentUpon>ClassGameRulesTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ClassLevelBenefitsRow.cs" />
     <Compile Include="View\ClassLevelBenefitsTab.xaml.cs">
       <DependentUpon>ClassLevelBenefitsTab.xaml</DependentUpon>
     </Compile>

@@ -53,9 +53,12 @@
   <ItemGroup>
     <Compile Include="Model\ClassSkillsTests.cs" />
     <Compile Include="Model\ClassStartingGoldTests.cs" />
+    <Compile Include="Model\ClassTests.cs" />
     <Compile Include="Model\DicesTests.cs" />
     <Compile Include="Model\DiceTests.cs" />
+    <Compile Include="Model\LevelBenefitsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ClassLevelBenefitsRowTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DndCreator\DndCreator.csproj">
