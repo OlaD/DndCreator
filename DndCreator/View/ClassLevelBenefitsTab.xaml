@@ -17,20 +17,25 @@
 			<ColumnDefinition Width="{Binding ElementName=Fortitude, Path=ActualWidth}"/>
 			<ColumnDefinition Width="{Binding ElementName=Reflex, Path=ActualWidth}"/>
 			<ColumnDefinition Width="{Binding ElementName=Will, Path=ActualWidth}"/>
-			<ColumnDefinition Width="{Binding ElementName=Special, Path=ActualWidth}"/>
+			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 
 		<Rectangle Grid.ColumnSpan="6" Fill="{DynamicResource FieldLabelBackground}" />
 		<Label Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="Rzut obronny na" />
 
-		<DataGrid x:Name="dataGrid" Grid.Row="1" Grid.ColumnSpan="6">
+		<DataGrid x:Name="LevelBenefits" 
+												Grid.Row="1" 
+												Grid.ColumnSpan="6"
+												ItemsSource="{Binding LevelBenefitsRows}"
+												AutoGenerateColumns="False"
+												ColumnWidth="Auto">
 			<DataGrid.Columns>
-				<DataGridTextColumn x:Name="Level" Binding="{Binding Level}" ClipboardContentBinding="{x:Null}" Header="Poziom"/>
-				<DataGridTextColumn x:Name="BaseAttack" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Bazowa premia do ataku"/>
-				<DataGridTextColumn x:Name="Fortitude" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Wytrwałość"/>
-				<DataGridTextColumn x:Name="Reflex" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Refleks"/>
-				<DataGridTextColumn x:Name="Will" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Wolę"/>
-				<DataGridTextColumn x:Name="Special" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Specjalne"/>
+				<DataGridTextColumn x:Name="Level" Binding="{Binding Level}" Header="Poziom"/>
+				<DataGridTextColumn x:Name="BaseAttack" Binding="{Binding BaseAttack}" Header="Bazowa premia do ataku"/>
+				<DataGridTextColumn x:Name="Fortitude" Binding="{Binding Fortitude}" Header="Wytrwałość"/>
+				<DataGridTextColumn x:Name="Reflex" Binding="{Binding Reflex}" Header="Refleks"/>
+				<DataGridTextColumn x:Name="Will" Binding="{Binding Will}" Header="Wolę"/>
+				<DataGridTextColumn x:Name="Special" Binding="{Binding Features}" Header="Specjalne"/>
 			</DataGrid.Columns>
 		</DataGrid>
 

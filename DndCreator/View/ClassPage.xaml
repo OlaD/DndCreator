@@ -63,7 +63,7 @@
 				<local:ClassFeaturesTab DataContext="{Binding SelectedClass}"/>
 			</TabItem>
 			<TabItem Header="Korzyści z poziomów">
-				<local:ClassLevelBenefitsTab />
+				<local:ClassLevelBenefitsTab x:Name="LevelBenefitsTab"/>
 			</TabItem>
 		</TabControl>
 	</Grid>

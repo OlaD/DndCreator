@@ -20,6 +20,8 @@ namespace DndCreator.View
 												viewModel = ClassViewModel.Instance;
 												this.DataContext = viewModel;
 												viewModel.PropertyChanged += new PropertyChangedEventHandler(ClassViewModel_PropertyChanged);
+
+												LevelBenefitsTab.DataContext = viewModel;
 								}
 
 								private void ClassViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -27,7 +29,9 @@ namespace DndCreator.View
 												switch (e.PropertyName)
 												{
 																case "SelectedClass":
-																				DescriptionTab.ShownDescription = viewModel.ShownDescription;																				
+																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
+																				viewModel.ChangeLevelBenefitsRows();
+																				LevelBenefitsTab.RefreshLevelBenefitsTable();
 																				break;
 																case "SelectedDescription":
 																				DescriptionTab.ShownDescription = viewModel.ShownDescription;

@@ -63,7 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\Ability.cs" />
     <Compile Include="Model\BaseAttackBonusType.cs" />
-    <Compile Include="Model\BaseSaveBonusType.cs" />
+    <Compile Include="Model\BaseSaveThrowBonusType.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ClassDescriptionType.cs" />
@@ -79,6 +79,7 @@
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\RaceDescriptionType.cs" />
     <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\SpellClass.cs" />
     <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\RaceViewModel.cs" />
     <Compile Include="View\AbilityPage.xaml.cs">
@@ -96,7 +97,7 @@
     <Compile Include="View\ClassGameRulesTab.xaml.cs">
       <DependentUpon>ClassGameRulesTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ClassLevelBenefitsRow.cs" />
+    <Compile Include="ViewModel\ClassLevelBenefitsRow.cs" />
     <Compile Include="View\ClassLevelBenefitsTab.xaml.cs">
       <DependentUpon>ClassLevelBenefitsTab.xaml</DependentUpon>
     </Compile>

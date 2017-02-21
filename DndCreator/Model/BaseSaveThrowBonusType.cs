@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DndCreator.Model
 {
-				public enum BaseSaveBonusType
+				public enum BaseSaveThrowBonusType
 				{
 								Good,
 								Poor

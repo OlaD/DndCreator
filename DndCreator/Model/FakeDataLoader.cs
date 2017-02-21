@@ -31,13 +31,15 @@ namespace DndCreator.Model
 								private void LoadClasses()
 								{
 												Class.ClassesList = new List<Class>();
-												Class.ClassesList.Add(CreateFakeClass("bard", 1));
-												Class.ClassesList.Add(CreateFakeClass("czarodziej", 2));
-												Class.ClassesList.Add(CreateFakeClass("wojownik", 3));
+												Class.ClassesList.Add(CreateFakeClass("bard", 1, true));
+												Class.ClassesList.Add(CreateFakeClass("czarodziej", 2, true));
+												Class.ClassesList.Add(CreateFakeClass("wojownik", 3, false));
 								}
 
-								private Class CreateFakeClass(string name, uint number)
+								private Class CreateFakeClass(string name, uint number, bool spellClass)
 								{
+												Class c;
+
 												string genitiveName = name + "a";
 												
 												Dictionary<ClassDescriptionType, string> descr = new Dictionary<ClassDescriptionType, string>();
@@ -56,16 +58,18 @@ namespace DndCreator.Model
 
 												List<ClassFeature> features = new List<ClassFeature>();
 												LevelBenefits<string> featureLevelBenefits = new LevelBenefits<string>();
-												featureLevelBenefits.Add(number + "/dzień");
-												featureLevelBenefits.Add("+" + number);
+												featureLevelBenefits.AddOnNextLevel(number + "/dzień");
+												featureLevelBenefits.AddOnNextLevel("+" + number);
 												features.Add(new ClassFeature("właściwość " + genitiveName, "...", featureLevelBenefits));
 												features.Add(new ClassFeature("właściwość1 " + genitiveName, "...", null));
 												features.Add(new ClassFeature("właściwość2 " + genitiveName, "...", null));
+												features.Add(new ClassFeature("właściwość3 " + genitiveName, "...", null));
 
-												LevelBenefits<List<Feature>> featuresOnLevels = new LevelBenefits<List<Feature>>();
-												featuresOnLevels.Add(new List<Feature>());
-												featuresOnLevels.Add(new List<Feature>());
-												featuresOnLevels.Add(new List<Feature>());
+												LevelBenefits<List<ClassFeature>> featuresOnLevels = new LevelBenefits<List<ClassFeature>>();
+												featuresOnLevels.AddOnNextLevel(new List<ClassFeature>());
+												featuresOnLevels.AddOnNextLevel(new List<ClassFeature>());
+												featuresOnLevels.AddOnNextLevel(new List<ClassFeature>());
+												featuresOnLevels.AddOnNextLevel(new List<ClassFeature>());
 												featuresOnLevels[1].Add(features[0]);
 												featuresOnLevels[2].Add(features[0]);
 												featuresOnLevels[2].Add(features[1]);
@@ -85,14 +89,35 @@ namespace DndCreator.Model
 																				break;
 												}
 
-												BaseSaveBonusType saveBonus;
+												BaseSaveThrowBonusType saveBonus;
 												if (number % 2 == 0)
-																saveBonus = BaseSaveBonusType.Good;
+																saveBonus = BaseSaveThrowBonusType.Good;
 												else
-																saveBonus = BaseSaveBonusType.Poor;
+																saveBonus = BaseSaveThrowBonusType.Poor;
 
-												Class c = new Class(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels, baseAttack, saveBonus, saveBonus, saveBonus);
+												if (spellClass)
+												{
+																LevelBenefits<LevelBenefits<uint?>> spellsPerDay = new LevelBenefits<LevelBenefits<uint?>>();
+																for (uint classLevel = 1; classLevel <= 20; classLevel++)
+																{
+																				for (uint spellLevel = 0; spellLevel <= 9; spellLevel++)
+																				{
+																								spellsPerDay[classLevel] = new LevelBenefits<uint?>();
+																								int spells = (int)classLevel - (int)spellLevel;
+																								if (spells < 0)
+																												spellsPerDay[classLevel][spellLevel] = null;
+																								else
+																												spellsPerDay[classLevel][spellLevel] = (uint)spells;
+																				}
+																}
+
+																c = new SpellClass(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels, baseAttack, saveBonus, saveBonus, saveBonus, spellsPerDay);
+												}
+												else
+																c = new Class(name, descr, abilitiesRule, alignmentRule, number, st, skills, features, featuresOnLevels, baseAttack, saveBonus, saveBonus, saveBonus);
+
 												return c;
 								}
+
 				}
 }
