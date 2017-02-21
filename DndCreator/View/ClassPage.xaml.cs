@@ -31,6 +31,10 @@ namespace DndCreator.View
 																case "SelectedClass":
 																				DescriptionTab.ShownDescription = viewModel.ShownDescription;
 																				viewModel.ChangeLevelBenefitsRows();
+																				if (viewModel.SelectedClass is SpellClass)
+																								LevelBenefitsTab.IsSpellColumnsVisible = true;
+																				else
+																								LevelBenefitsTab.IsSpellColumnsVisible = false;
 																				LevelBenefitsTab.RefreshLevelBenefitsTable();
 																				break;
 																case "SelectedDescription":

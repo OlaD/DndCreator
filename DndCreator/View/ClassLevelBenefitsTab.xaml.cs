@@ -9,6 +9,18 @@ namespace DndCreator.View
 				/// 
 				public partial class ClassLevelBenefitsTab : UserControl
 				{
+								System.Windows.Visibility spellColumnsVisibility;
+								public bool IsSpellColumnsVisible 
+								{
+												set 
+												{
+																if (value == true)
+																				spellColumnsVisibility = System.Windows.Visibility.Visible;
+																else
+																				spellColumnsVisibility = System.Windows.Visibility.Hidden;
+												}
+								}
+
 								public ClassLevelBenefitsTab()
 								{
 												InitializeComponent();
@@ -16,7 +28,18 @@ namespace DndCreator.View
 
 								public void RefreshLevelBenefitsTable()
 								{
-												LevelBenefits.Items.Refresh();		
+												LevelBenefits.Items.Refresh();
+
+												SpellsPerDay0.Visibility = spellColumnsVisibility;
+												SpellsPerDay1.Visibility = spellColumnsVisibility;
+												SpellsPerDay2.Visibility = spellColumnsVisibility;
+												SpellsPerDay3.Visibility = spellColumnsVisibility;
+												SpellsPerDay4.Visibility = spellColumnsVisibility;
+												SpellsPerDay5.Visibility = spellColumnsVisibility;
+												SpellsPerDay6.Visibility = spellColumnsVisibility;
+												SpellsPerDay7.Visibility = spellColumnsVisibility;
+												SpellsPerDay8.Visibility = spellColumnsVisibility;
+												SpellsPerDay9.Visibility = spellColumnsVisibility;
 								}
 				}
 }

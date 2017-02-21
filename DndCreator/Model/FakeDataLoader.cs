@@ -100,9 +100,9 @@ namespace DndCreator.Model
 																LevelBenefits<LevelBenefits<uint?>> spellsPerDay = new LevelBenefits<LevelBenefits<uint?>>();
 																for (uint classLevel = 1; classLevel <= 20; classLevel++)
 																{
+																				spellsPerDay[classLevel] = new LevelBenefits<uint?>();
 																				for (uint spellLevel = 0; spellLevel <= 9; spellLevel++)
 																				{
-																								spellsPerDay[classLevel] = new LevelBenefits<uint?>();
 																								int spells = (int)classLevel - (int)spellLevel;
 																								if (spells < 0)
 																												spellsPerDay[classLevel][spellLevel] = null;

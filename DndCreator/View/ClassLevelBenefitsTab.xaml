@@ -36,6 +36,16 @@
 				<DataGridTextColumn x:Name="Reflex" Binding="{Binding Reflex}" Header="Refleks"/>
 				<DataGridTextColumn x:Name="Will" Binding="{Binding Will}" Header="Wolę"/>
 				<DataGridTextColumn x:Name="Special" Binding="{Binding Features}" Header="Specjalne"/>
+				<DataGridTextColumn x:Name="SpellsPerDay0" Binding="{Binding SpellsPerDay[0]}" Header="0"/>
+				<DataGridTextColumn x:Name="SpellsPerDay1" Binding="{Binding SpellsPerDay[1]}" Header="1"/>
+				<DataGridTextColumn x:Name="SpellsPerDay2" Binding="{Binding SpellsPerDay[2]}" Header="2"/>
+				<DataGridTextColumn x:Name="SpellsPerDay3" Binding="{Binding SpellsPerDay[3]}" Header="3"/>
+				<DataGridTextColumn x:Name="SpellsPerDay4" Binding="{Binding SpellsPerDay[4]}" Header="4"/>
+				<DataGridTextColumn x:Name="SpellsPerDay5" Binding="{Binding SpellsPerDay[5]}" Header="5"/>
+				<DataGridTextColumn x:Name="SpellsPerDay6" Binding="{Binding SpellsPerDay[6]}" Header="6"/>
+				<DataGridTextColumn x:Name="SpellsPerDay7" Binding="{Binding SpellsPerDay[7]}" Header="7"/>
+				<DataGridTextColumn x:Name="SpellsPerDay8" Binding="{Binding SpellsPerDay[8]}" Header="8"/>
+				<DataGridTextColumn x:Name="SpellsPerDay9" Binding="{Binding SpellsPerDay[9]}" Header="9"/>
 			</DataGrid.Columns>
 		</DataGrid>
 
