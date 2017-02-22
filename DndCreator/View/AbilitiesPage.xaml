@@ -1,0 +1,58 @@
+﻿<Page x:Class="DndCreator.View.AbilityPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DndCreator.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="511.8" d:DesignWidth="402"
+      Title="AbilityPage">
+
+	<Grid Margin="0,0,0,0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="239*"/>
+			<RowDefinition Height="230*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" MinWidth="197"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Label x:Name="Header"
+								 FontFamily="BlackChancery"
+								 FontSize="26.667"
+								 HorizontalAlignment="Left"
+								 VerticalAlignment="Top" 
+								 Content="Atrybuty" Height="43" Width="104"/>
+
+		<TabControl x:Name="tabControl" Grid.Row="2" Grid.ColumnSpan="2">
+			<TabItem Header="Opis atrybutów">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="49*"/>
+						<ColumnDefinition Width="149*"/>
+					</Grid.ColumnDefinitions>
+					<StackPanel>
+						<StackPanel.Resources>
+							<Style BasedOn="{StaticResource {x:Type ToggleButton}}" TargetType="RadioButton">
+								<Setter Property="Margin" Value="1, 1, 1, 1"/>
+							</Style>
+						</StackPanel.Resources>
+						<RadioButton x:Name="Strength" Content="Siła" Checked="AbilityButton_Checked"/>
+						<RadioButton x:Name="Dexterity" Content="Zręczność" Checked="AbilityButton_Checked"/>
+						<RadioButton x:Name="Constitution" Content="Budowa" Checked="AbilityButton_Checked"/>
+						<RadioButton x:Name="Intelligence" Content="Intelekt" Checked="AbilityButton_Checked"/>
+						<RadioButton x:Name="Wisdom" Content="Roztropność" Checked="AbilityButton_Checked"/>
+						<RadioButton x:Name="Charisma" Content="Charyzma" Checked="AbilityButton_Checked"/>
+					</StackPanel>
+					<TextBlock x:Name="AbilityDescription" Grid.Column="1" TextWrapping="Wrap" Text="-"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="TabItem">
+				<Grid Background="#FFE5E5E5"/>
+			</TabItem>
+		</TabControl>
+
+	</Grid>
+</Page>

@@ -62,6 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Ability.cs" />
+    <Compile Include="Model\AbilityType.cs" />
     <Compile Include="Model\BaseAttackBonusType.cs" />
     <Compile Include="Model\BaseSaveThrowBonusType.cs" />
     <Compile Include="Model\Character.cs" />
@@ -80,10 +81,11 @@
     <Compile Include="Model\RaceDescriptionType.cs" />
     <Compile Include="Model\Skill.cs" />
     <Compile Include="Model\SpellClass.cs" />
+    <Compile Include="ViewModel\AbilitiesViewModel.cs" />
     <Compile Include="ViewModel\ClassViewModel.cs" />
     <Compile Include="ViewModel\RaceViewModel.cs" />
-    <Compile Include="View\AbilityPage.xaml.cs">
-      <DependentUpon>AbilityPage.xaml</DependentUpon>
+    <Compile Include="View\AbilitiesPage.xaml.cs">
+      <DependentUpon>AbilitiesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CharacterPanel.xaml.cs">
       <DependentUpon>CharacterPanel.xaml</DependentUpon>
@@ -123,7 +125,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AbilityPage.xaml">
+    <Page Include="View\AbilitiesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

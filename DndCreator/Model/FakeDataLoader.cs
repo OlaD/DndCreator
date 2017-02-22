@@ -6,10 +6,23 @@ namespace DndCreator.Model
 				{
 								public void LoadData()
 								{
+												LoadAbilities();
 												LoadRaces();
 												LoadClasses();
 								}
-								
+
+								private void LoadAbilities()
+								{
+												Ability.Abilities = new Dictionary<AbilityType, Ability>();
+												Dictionary<AbilityType, Ability> abilities = Ability.Abilities;
+												abilities.Add(AbilityType.Strength, new Ability("Siła", "S", "Opis siły"));
+												abilities.Add(AbilityType.Dexterity, new Ability("Zręczność", "Zr", "Opis zręczności"));
+												abilities.Add(AbilityType.Constitution, new Ability("Budowa", "Bd", "Opis budowy"));
+												abilities.Add(AbilityType.Intelligence, new Ability("Intelekt", "Int", "Opis intelektu"));
+												abilities.Add(AbilityType.Wisdom, new Ability("Roztropność", "Rzt", "Opis roztropności"));
+												abilities.Add(AbilityType.Charisma, new Ability("Charyzma", "Cha", "Opis charyzmy"));
+								}
+
 								private void LoadRaces()
 								{
 												Race.RacesList = new List<Race>();
@@ -48,7 +61,7 @@ namespace DndCreator.Model
 												descr.Add(ClassDescriptionType.Religion, "religia " + genitiveName);
 
 												List<Skill> skillList = new List<Skill>();
-												skillList.Add(new Skill("umiejętność " + genitiveName, new Ability("atut" + number, "at" + number)));
+												skillList.Add(new Skill("umiejętność " + genitiveName, Ability.Abilities[AbilityType.Strength]));
 												ClassSkills skills = new ClassSkills(number, skillList);
 
 												string abilitiesRule = "atrybuty " + genitiveName;
@@ -118,6 +131,7 @@ namespace DndCreator.Model
 
 												return c;
 								}
+
 
 				}
 }

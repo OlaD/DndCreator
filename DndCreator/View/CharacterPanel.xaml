@@ -16,7 +16,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
-			<RowDefinition />
+			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 		<Label x:Name="characterPanelHeader" 
 								 FontFamily="BlackChancery"
@@ -25,12 +25,12 @@
 								 Grid.ColumnSpan="2"
 								 HorizontalContentAlignment="Center"
 								 Content="Karta Postaci">
-								<Label.Background>
-												<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-																<GradientStop Color="White" Offset="0"/>
-																<GradientStop Color="#FFEEEEEE" Offset="1"/>
-												</LinearGradientBrush>
-								</Label.Background>
+			<Label.Background>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<GradientStop Color="White" Offset="0"/>
+					<GradientStop Color="#FFEEEEEE" Offset="1"/>
+				</LinearGradientBrush>
+			</Label.Background>
 		</Label>
 		<Label x:Name="RaceLabel" 
 								 Content="Rasa:" 
@@ -56,5 +56,17 @@
 								  HorizontalContentAlignment="Center"  
 										Content="[wybierz]"
 								  Click="Class_Click"/>
+		<Label x:Name="AbilitiesLabel" 
+									Content="Atrybuty:" 
+									Grid.Row="3"/>
+		<Button x:Name="Abilities" 
+										Background="#00000000"
+										Foreground="Black"
+										BorderBrush="#00707070"
+										Grid.Row="3"
+										Grid.Column="1" 
+										HorizontalContentAlignment="Center"  
+										Content="[wybierz]"
+										Click="Abilities_Click"/>
 	</Grid>
 </UserControl>

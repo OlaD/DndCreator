@@ -24,6 +24,7 @@ namespace DndCreator
 				{
 								RacePage racePage;
 								ClassPage classPage;
+								AbilityPage abilitiesPage;
 
 								public MainWindow()
 								{
@@ -42,6 +43,7 @@ namespace DndCreator
 								{
 												racePage = new RacePage();
 												classPage = new ClassPage();
+												abilitiesPage = new AbilityPage();
 								}
 
 								private void CharacterPanel_RaceClick(object sender, RoutedEventArgs e)
@@ -52,6 +54,11 @@ namespace DndCreator
 								private void CharacterPanel_ClassClick(object sender, RoutedEventArgs e)
 								{
 												frame.Navigate(classPage);
+								}
+
+								private void CharacterPanel_AbilitiesClick(object sender, RoutedEventArgs e)
+								{
+												frame.Navigate(abilitiesPage);
 								}
 
 				}

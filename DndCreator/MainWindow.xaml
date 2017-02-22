@@ -17,12 +17,13 @@
 		</Grid.ColumnDefinitions>
 
 		<Border BorderThickness="1" 
-												Grid.Column="0" 
-												Grid.ColumnSpan="1" 
-												BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+										Grid.Column="0" 
+										Grid.ColumnSpan="1" 
+										BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
 			<view:CharacterPanel 
 												RaceClick="CharacterPanel_RaceClick"
-												ClassClick="CharacterPanel_ClassClick" />
+												ClassClick="CharacterPanel_ClassClick"
+												AbilitiesClick="CharacterPanel_AbilitiesClick"/>
 		</Border>
 
 		<Border			BorderThickness="1" 

@@ -25,9 +25,10 @@ namespace DndCreator.View
 								{
 												InitializeComponent();
 
-												Model.Character.Instance.PropertyChanged += new PropertyChangedEventHandler(character_PropertyChanged);
+												Model.Character.Instance.PropertyChanged += new PropertyChangedEventHandler(Character_PropertyChanged);
 								}
 
+								#region Race
 								public static readonly RoutedEvent RaceClickEvent =
 												EventManager.RegisterRoutedEvent("RaceClick", RoutingStrategy.Bubble,
 												typeof(RoutedEventHandler), typeof(CharacterPanel));
@@ -42,7 +43,9 @@ namespace DndCreator.View
 								{
 												this.RaiseEvent(new RoutedEventArgs(RaceClickEvent, this));
 								}
+								#endregion
 
+								#region Class
 								public static readonly RoutedEvent ClassClickEvent =
 												EventManager.RegisterRoutedEvent("ClassClick", RoutingStrategy.Bubble,
 												typeof(RoutedEventHandler), typeof(CharacterPanel));
@@ -57,8 +60,26 @@ namespace DndCreator.View
 								{
 												this.RaiseEvent(new RoutedEventArgs(ClassClickEvent, this));
 								}
+								#endregion
 
-								private void character_PropertyChanged(object sender, PropertyChangedEventArgs e)
+								#region Abilities
+								public static readonly RoutedEvent AbilitiesClickEvent =
+												EventManager.RegisterRoutedEvent("AbilitiesClick", RoutingStrategy.Bubble,
+												typeof(RoutedEventHandler), typeof(CharacterPanel));
+
+								public event RoutedEventHandler AbilitiesClick
+								{
+												add { AddHandler(AbilitiesClickEvent, value); }
+												remove { RemoveHandler(AbilitiesClickEvent, value); }
+								}
+
+								private void Abilities_Click(object sender, RoutedEventArgs e)
+								{
+												this.RaiseEvent(new RoutedEventArgs(AbilitiesClickEvent, this));
+								}
+								#endregion
+
+								private void Character_PropertyChanged(object sender, PropertyChangedEventArgs e)
 								{
 												switch(e.PropertyName)
 												{
