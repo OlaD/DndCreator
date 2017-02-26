@@ -24,7 +24,7 @@ namespace DndCreator.Model
 
 								public float AverageAmount
 								{
-												get { return multiplier * dices.AverageThrow(); }
+												get { return multiplier * dices.AverageRoll(); }
 								}
 
 								public string AverageAmountString

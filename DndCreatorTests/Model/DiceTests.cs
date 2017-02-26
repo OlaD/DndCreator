@@ -25,7 +25,7 @@ namespace DndCreator.Model.Tests
 								{
 												Dice target = new Dice(6);
 												float expected = 3.5f;
-												float actual = target.AverageThrow();
+												float actual = target.AverageRoll();
 												Assert.AreEqual(expected, actual);
 								}
 				}

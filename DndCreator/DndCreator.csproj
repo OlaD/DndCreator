@@ -87,6 +87,9 @@
     <Compile Include="View\AbilitiesPage.xaml.cs">
       <DependentUpon>AbilitiesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AbilitiesRandomValues.xaml.cs">
+      <DependentUpon>AbilitiesRandomValues.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CharacterPanel.xaml.cs">
       <DependentUpon>CharacterPanel.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AbilitiesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AbilitiesRandomValues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
