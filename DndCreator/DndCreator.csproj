@@ -66,6 +66,7 @@
     <Compile Include="Model\BaseAttackBonusType.cs" />
     <Compile Include="Model\BaseSaveThrowBonusType.cs" />
     <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\CharacterAbility.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ClassDescriptionType.cs" />
     <Compile Include="Model\ClassFeature.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Model\Feature.cs" />
     <Compile Include="Model\IDataLoader.cs" />
     <Compile Include="Model\LevelBenefits.cs" />
+    <Compile Include="Model\Modifier.cs" />
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\RaceDescriptionType.cs" />
     <Compile Include="Model\Skill.cs" />

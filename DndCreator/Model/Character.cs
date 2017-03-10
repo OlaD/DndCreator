@@ -1,49 +1,60 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DndCreator.Model
 {
 				class Character : INotifyPropertyChanged
 				{
-								private static Character instance;
-								private Character() { }
+								private static Character _instance;
 								public static Character Instance
 								{
 												get
 												{
-																if (instance == null)
+																if (_instance == null)
 																{
-																				instance = new Character();
+																				_instance = new Character();
 																}
-																return instance;
+																return _instance;
 												}
 								}
 
-								private Race race;
+								private Race _race;
 								public Race Race
-								{ 
-												get { return race; } 
+								{
+												get { return _race; }
 												set
 												{
-																if (race != value)
+																if (_race != value)
 																{
-																				race = value;
+																				_race = value;
 																				OnPropertyChanged("Race");
 																}
-												} 
+												}
 								}
 
-								private Class @class;
+								private Class _class;
 								public Class Class
 								{
-												get { return @class; }
+												get { return _class; }
 												set
 												{
-																if(@class != value)
+																if (_class != value)
 																{
-																				@class = value;
+																				_class = value;
 																				OnPropertyChanged("Class");
 																}
 												}
+								}
+
+								//public Dictionary<AbilityType, CharacterAbility> Abilities { get; }
+
+								private Character()
+								{
+												//foreach(AbilityType abilityType in Ability.Abilities.Keys)
+												//{
+												//				Ability ability = Ability.Abilities[abilityType];
+												//				Abilities.Add(abilityType, new CharacterAbility(ability));
+												//}
 								}
 
 								public event PropertyChangedEventHandler PropertyChanged;

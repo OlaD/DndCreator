@@ -131,7 +131,5 @@ namespace DndCreator.Model
 
 												return c;
 								}
-
-
 				}
 }
